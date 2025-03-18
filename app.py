@@ -1,36 +1,10 @@
-""" from PIL import Image
-import pytesseract
-import cv2
-from flask import Flask, request
-
-pytesseract.pytesseract.tesseract_cmd = r"C://Program Files//Tesseract-OCR//tesseract.exe"
-
-
-
-image_path = 'img1.png'  
-image = cv2.imread(image_path)
-
-rgb_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-
-pil_image = Image.fromarray(rgb_image)
-
-text = pytesseract.image_to_string(pil_image)
-
-
-print("Extracted Text:")
-print(text)
-
- """
-
-
-
 
 from flask import Flask, request, send_file
 from gtts import gTTS
 import os
 # from PIL import Image
 # import pytesseract
-# import cv2
+import cv2
 import numpy as np
 from flask import Flask, request, jsonify
 
