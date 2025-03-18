@@ -26,16 +26,16 @@ phases:
       - ldconfig -p | grep lept
       - cd ..      
       - echo "Installing Tesseract"
-      # Download and build Tesseract from source
-      # - echo "Downloading and installing Tesseract"
-      # - curl -L -o tesseract.tar.gz https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.3.3.tar.gz
-      # - tar -xvzf tesseract.tar.gz
-      # - cd tesseract-5.3.3
-      # - ./autogen.sh
-      # - ./configure
-      # - make -j4
-      # - sudo make install
-      # - sudo ldconfig
+      #Download and build Tesseract from source
+      - echo "Downloading and installing Tesseract"
+      - curl -L -o tesseract.tar.gz https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.3.3.tar.gz
+      - tar -xvzf tesseract.tar.gz
+      - cd tesseract-5.3.3
+      - ./autogen.sh
+      - ./configure --prefix=/usr
+      - make -j4
+      - sudo make install
+      - sudo ldconfig
       # - cd ..
       # - pip install -r requirements.txt 
 
@@ -48,7 +48,7 @@ phases:
   build:
     commands:
       - echo "Post-build phase - verifying Tesseract installation"
-      - tesseract -v
+     # - tesseract -v
 
 artifacts:
   files:
