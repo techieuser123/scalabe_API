@@ -18,31 +18,27 @@ phases:
       - tar -xvzf leptonica.tar.gz
       - cd leptonica-1.83.1
       - ./autogen.sh
-      - ./configure
-      - make -j4
-      - sudo make install
-      - cd ..      
-      - echo "Installing Tesseract"
-      # Download and build Tesseract from source
-      - echo "Downloading and installing Tesseract"
-      - curl -L -o tesseract.tar.gz https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.3.3.tar.gz
-      - tar -xvzf tesseract.tar.gz
-      - cd tesseract-5.3.3
-      - ./autogen.sh
-      - ./configure
+      - ./configure --prefix=/usr
       - make -j4
       - sudo make install
       - sudo ldconfig
-      - cd ..
-      - pip install -r requirements.txt 
-      # - yum update -y
-      # - yum install -y jq
-      # - sudo yum install -y java-11-openjdk
-      # - java -version  # Check installed Java version
-      # # Set JAVA_HOME environment variable
-      # - export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
-      # - export PATH=$JAVA_HOME/bin:$PATH
-      # - java -version  # Verify that Java 11 is being used
+# Check if Leptonica is installed
+      - lept -v
+      - cd ..      
+      - echo "Installing Tesseract"
+      # Download and build Tesseract from source
+      # - echo "Downloading and installing Tesseract"
+      # - curl -L -o tesseract.tar.gz https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.3.3.tar.gz
+      # - tar -xvzf tesseract.tar.gz
+      # - cd tesseract-5.3.3
+      # - ./autogen.sh
+      # - ./configure
+      # - make -j4
+      # - sudo make install
+      # - sudo ldconfig
+      # - cd ..
+      # - pip install -r requirements.txt 
+
       
   pre_build:
     commands:
