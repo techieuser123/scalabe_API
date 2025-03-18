@@ -14,9 +14,9 @@ phases:
       - rm -rf leptonica-* tesseract-* leptonica.tar.gz tesseract.tar.gz
       # Download and build Leptonica from source
       - echo "Downloading and installing Leptonica"
-      - curl -L -o leptonica.tar.gz https://github.com/DanBloomberg/leptonica/archive/refs/tags/1.85.0.tar.gz
+      - curl -L -o leptonica.tar.gz https://github.com/DanBloomberg/leptonica/archive/refs/tags/1.83.1.tar.gz
       - tar -xvzf leptonica.tar.gz
-      - cd leptonica-1.85.0
+      - cd leptonica-1.83.1
       - ./autogen.sh
       - ./configure
       - make -j4
@@ -25,9 +25,9 @@ phases:
       - echo "Installing Tesseract"
       # Download and build Tesseract from source
       - echo "Downloading and installing Tesseract"
-      - curl -L -o tesseract.tar.gz https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.5.0.tar.gz
+      - curl -L -o tesseract.tar.gz https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.3.3.tar.gz
       - tar -xvzf tesseract.tar.gz
-      - cd tesseract-5.5.0
+      - cd tesseract-5.3.3
       - ./autogen.sh
       - ./configure
       - make -j4
