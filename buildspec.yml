@@ -4,7 +4,7 @@ phases:
     runtime-versions:
       python: 3.11
     commands:
-    - cd /usr
+    - cd /usr/lib64
     - ls
 #       - echo "Updating system packages"
 #       - sudo dnf update -y
