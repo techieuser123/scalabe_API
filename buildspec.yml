@@ -4,7 +4,8 @@ phases:
     runtime-versions:
       python: 3.11
     commands:
-    - cd /usr/lib64
+    - which tesseract
+    - cd /usr/bin
     - ls
 #       - echo "Updating system packages"
 #       - sudo dnf update -y
