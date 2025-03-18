@@ -4,8 +4,7 @@ Flask
 gunicorn
 requests
 numpy
-opencv-python
+opencv-python-headless
 Pillow
 pytesseract
 gTTS
-opencv-contrib-python
