@@ -6,6 +6,9 @@ phases:
     commands:
     - sudo yum update -y
     - sudo yum install -y libGL mesa-libGL mesa-libGL-devel libgomp
+    - yum install -y mesa-libGL
+    - yum install -y libXext libSM libXrender
+    - yum install -y glibc fontconfig freetype freetype-devel libpng libX11
 #     - pip install -r requirements.txt
 #     - echo "Updating system packages"
 #     - sudo dnf update -y
