@@ -1,0 +1,35 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - echo "Updating system packages"
+      - sudo dnf update -y
+      - echo "Installing required dependencies for Tesseract"
+      - sudo dnf install -y gcc libpng-devel libjpeg-devel libtiff-devel libwebp-devel leptonica leptonica-devel
+      - echo "Installing Tesseract"
+      - sudo dnf install -y tesseract
+      - pip install -r requirements.txt 
+      # - yum update -y
+      # - yum install -y jq
+      # - sudo yum install -y java-11-openjdk
+      # - java -version  # Check installed Java version
+      # # Set JAVA_HOME environment variable
+      # - export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+      # - export PATH=$JAVA_HOME/bin:$PATH
+      # - java -version  # Verify that Java 11 is being used
+      
+  pre_build:
+    commands:
+      - echo "PRE-Build stage"
+      - echo "pre build stage completed - PyLint Completed!!"      
+
+  build:
+    commands:
+      - echo "Post-build phase - verifying Tesseract installation"
+      - tesseract -v
+
+artifacts:
+  files:
+    - '**/*'
