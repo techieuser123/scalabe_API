@@ -2,21 +2,21 @@
 from flask import Flask, request, send_file
 from gtts import gTTS
 import os
-# from PIL import Image
-# import pytesseract
+from PIL import Image
+import pytesseract
 import cv2
 import numpy as np
 from flask import Flask, request, jsonify
 
 
 #pytesseract.pytesseract.tesseract_cmd = r"C://Program Files//Tesseract-OCR//tesseract.exe"
-#pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
+pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
 
 
 app = Flask(__name__)
 
 
-""" 
+
 @app.route('/ocr', methods=['POST'])
 def img_to_text():
     try:
@@ -32,7 +32,7 @@ def img_to_text():
         return jsonify({"Extracted Text": text}), 200
         
     except Exception as e:
-        return jsonify({"error": str(e)}), 500 """
+        return jsonify({"error": str(e)}), 500
 
 
 @app.route('/text-to-speech', methods=['GET'])
