@@ -1,3 +1,5 @@
+PyOpenGL
+PyOpenGL-accelerate
 Flask
 gunicorn
 requests
@@ -6,3 +8,4 @@ opencv-python
 Pillow
 pytesseract
 gTTS
+opencv-contrib-python

@@ -10,6 +10,10 @@ phases:
     - echo "Installing required dependencies for Tesseract"
     - sudo dnf install -y gcc gcc-c++ autoconf automake libtool libpng-devel libjpeg-devel libtiff-devel libwebp-devel      
     - sudo dnf install -y gcc libpng-devel libjpeg-devel libtiff-devel libwebp-devel 
+
+    - sudo yum update -y
+    - sudo yum install -y libGL mesa-libGL mesa-libGL-devel libgomp
+    
     # Clean old downloads
     - echo "Cleaning any old source files"
     - rm -rf leptonica-* tesseract-* leptonica.tar.gz tesseract.tar.gz
