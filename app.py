@@ -28,7 +28,6 @@ print(text)
 from flask import Flask, request, send_file
 from gtts import gTTS
 import os
-
 from PIL import Image
 import pytesseract
 import cv2

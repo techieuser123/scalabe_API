@@ -37,7 +37,7 @@ phases:
       - sudo make install
       - sudo ldconfig
       # - cd ..
-      # - pip install -r requirements.txt 
+      - pip install -r requirements.txt 
 
       
   pre_build:
