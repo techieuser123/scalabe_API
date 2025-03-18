@@ -4,6 +4,8 @@ phases:
     runtime-versions:
       python: 3.11
     commands:
+    - cd /usr
+    - ls
 #       - echo "Updating system packages"
 #       - sudo dnf update -y
 #       - echo "Installing required dependencies for Tesseract"
