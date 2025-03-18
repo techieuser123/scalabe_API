@@ -23,7 +23,7 @@ phases:
       - sudo make install
       - sudo ldconfig
 # Check if Leptonica is installed
-      - lept -v
+      - ldconfig -p | grep lept
       - cd ..      
       - echo "Installing Tesseract"
       # Download and build Tesseract from source
